@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "150ba599-f767-4f1b-9e02-d14128d48a85",
+		"name": "pruebas_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2202551"
+	},
+	"item": [
+		{
+			"name": "create email",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
