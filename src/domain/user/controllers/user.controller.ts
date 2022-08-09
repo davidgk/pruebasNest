@@ -8,12 +8,13 @@ import {
   Patch,
   Post,
   SetMetadata,
-  UseGuards
+  UseGuards, UseInterceptors
 } from '@nestjs/common';
-import { RolesGuard } from '../roles/helpers/roles.guard';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
-import { UserService } from './user.service';
+import { RolesGuard } from '../../roles/helpers/roles.guard';
+import { CreateUserDto } from '../dto/create-user.dto';
+import { UpdateUserDto } from '../dto/update-user.dto';
+import { LoggingInterceptor } from '../interceptors/logging.interceptor';
+import { UserService } from '../services/user.service';
 
 @Controller('user')
 export class UserController {
@@ -27,6 +28,7 @@ export class UserController {
   }
 
   @Get()
+  @UseInterceptors(LoggingInterceptor)
   findAll() {
     return this.userService.findAll();
   }
