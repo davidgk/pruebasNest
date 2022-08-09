@@ -1,5 +1,6 @@
 import { define } from 'typeorm-seeding';
-import { User } from '../../entities/user.entity';
+import { User } from '../../../domain/user/entities/user.entity';
+
 
 define(User, (faker: any) => {
   const firstName = faker.name.firstName();

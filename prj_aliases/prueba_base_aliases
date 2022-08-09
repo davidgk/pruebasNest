@@ -1,2 +1,3 @@
 alias startDkc="dkc --env-file .env.dev up -d --no-recreate postgres redis"
 alias stopDkc="dkc --env-file .env.dev stop"
+alias debug="yarn start:debug"
