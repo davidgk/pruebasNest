@@ -1,12 +1,19 @@
-import { Module } from '@nestjs/common';
+import { Module, ValidationPipe } from '@nestjs/common';
+import { APP_PIPE } from '@nestjs/core';
 import { AppController } from '../controllers/app.controller';
-import { UserModule } from '../user/user.module';
-import { NodeMailerModule } from './modemailer.module';
+import { DomainModule } from '../domain/domain.module';
 import { AppService } from '../services/app.service';
+import { NodeMailerModule } from './modemailer.module';
 
 @Module({
-  imports: [NodeMailerModule, UserModule],
+  imports: [NodeMailerModule, DomainModule],
   controllers: [AppController],
-  providers: [AppService]
+  providers: [
+    {
+      provide: APP_PIPE,
+      useClass: ValidationPipe,
+    },
+    AppService
+  ]
 })
 export class AppModule {}

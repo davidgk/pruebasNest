@@ -1,4 +1,5 @@
-import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, UseGuards } from '@nestjs/common';
+import { RolesGuard } from '../roles/helpers/RolesGuard';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UserService } from './user.service';
@@ -8,8 +9,8 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Post()
-  // @UsePipes(new JoiValidationPipe(CreateUserDto))
-  async create(@Body(new ValidationPipe()) createUserDto: CreateUserDto) {
+  @UseGuards(RolesGuard)
+  async create(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
   }
 
