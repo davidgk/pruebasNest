@@ -55,6 +55,39 @@
 			"response": []
 		},
 		{
+			"name": "heavy process",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cargo\": \"gerente\",\n    \"email\": \"email@email.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basic_url}}/user/heavy-process",
+					"host": [
+						"{{basic_url}}"
+					],
+					"path": [
+						"user",
+						"heavy-process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "user",
 			"request": {
 				"method": "GET",
