@@ -1,6 +1,6 @@
 import { Module, ValidationPipe } from '@nestjs/common';
 import { APP_PIPE } from '@nestjs/core';
-import { NodeMailerModule } from './business/node-mailer-test/modemailer.module';
+import { BusinessModule } from './business/business.module';
 import { AppController } from './commons/app/controllers/app.controller';
 import { AppService } from './commons/app/services/app.service';
 import { ConfigPruebasNestModule } from './config/config.module';
@@ -8,8 +8,7 @@ import { DomainModule } from './domain/domain.module';
 
 
 @Module({
-  // TODO: replace nodemailer por business modu
-  imports: [ConfigPruebasNestModule, NodeMailerModule, DomainModule],
+  imports: [ConfigPruebasNestModule, BusinessModule, DomainModule],
   controllers: [AppController],
   providers: [
     {
