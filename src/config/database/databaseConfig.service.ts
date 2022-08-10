@@ -18,10 +18,11 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
       synchronize: this.config.get<boolean>('TYPEORM_SYNCHRONIZE'),
       logging: this.config.get<boolean>('TYPEORM_LOGGING'),
       migrationsRun: this.config.get<boolean>('TYPEORM_MIGRATIONS_RUN'),
-      entities: ['dist/**/*.entity.{ts,js}'],
+      entities: ['dist/src/domain/**/*.entity.js'],
       migrations: ['dist/migrations/*.{ts,js}'],
       migrationsTableName: 'typeorm_migrations',
-      logger: 'file'
+      logger: 'file',
+      autoLoadEntities: true
     };
   }
 }

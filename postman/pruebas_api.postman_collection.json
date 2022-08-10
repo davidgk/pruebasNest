@@ -35,7 +35,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Carlos\",\n    \"age\": 1\n}",
+					"raw": "{\n    \"firstName\": \"Carlos\",\n    \"lastName\": \"Mendez\",\n    \"email\": \"password@pass.com\",\n    \"password\": \"password\"\n    \n}",
 					"options": {
 						"raw": {
 							"language": "json"

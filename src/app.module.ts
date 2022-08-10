@@ -1,5 +1,6 @@
 import { Module, ValidationPipe } from '@nestjs/common';
 import { APP_PIPE } from '@nestjs/core';
+import { DataSource } from 'typeorm';
 import { BusinessModule } from './business/business.module';
 import { AppController } from './commons/app/controllers/app.controller';
 import { AppService } from './commons/app/services/app.service';
@@ -18,4 +19,6 @@ import { DomainModule } from './domain/domain.module';
     AppService
   ]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private dataSource: DataSource) {}
+}

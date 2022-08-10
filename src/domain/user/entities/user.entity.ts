@@ -1,8 +1,11 @@
-import { Column, Entity, Index } from 'typeorm';
+import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
 import { Base } from '../../base.entity';
 
-@Entity()
+@Entity('users')
 export class User extends Base {
+  @PrimaryGeneratedColumn()
+  id: number;
+
   @Column({ nullable: true })
   firstName?: string;
 

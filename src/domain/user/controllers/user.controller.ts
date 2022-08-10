@@ -26,7 +26,8 @@ export class UserController {
   @UseGuards(RolesGuard)
   @SetMetadata('roles', ['admin'])
   async create(@Body() createUserDto: CreateUserDto) {
-    return this.userService.create(createUserDto);
+    const user = await this.userService.create(createUserDto);
+    return user;
   }
 
   @Post('/heavy-process')
