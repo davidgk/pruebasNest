@@ -4,9 +4,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmAsyncConfig } from './databaseConfig.service';
 
 @Module({
-  imports: [
-    ConfigModule,
-    TypeOrmModule.forRootAsync(typeOrmAsyncConfig)
-  ]
+  imports: [ConfigModule, TypeOrmModule.forRootAsync(typeOrmAsyncConfig)]
 })
 export class DatabaseModule {}

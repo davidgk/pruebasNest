@@ -40,10 +40,7 @@ export const typeOrmAsyncConfig: TypeOrmModuleAsyncOptions = {
       synchronize: false,
       logging: true,
       migrationsRun: false,
-      entities: [
-        'dist/src/domain/**/*.entity.js',
-        'node_modules/nestjs-admin/dist/**/*.entity.js'
-      ],
+      entities: ['dist/src/domain/**/*.entity.js'],
       migrations: ['dist/src/config/database/migrations/*.{ts,js}'],
       cli: {
         migrationsDir: __dirname + '/../migrations'
@@ -63,10 +60,7 @@ export const typeOrmConfig: DataSourceOptions = {
   username: process.env.TYPEORM_USERNAME || 'postgres',
   password: process.env.TYPEORM_PASSWORD || 'postgres',
   logging: Boolean(process.env.TYPEORM_LOGGING) || true,
-  entities: [
-    'dist/src/domain/**/*.entity.js',
-    'node_modules/nestjs-admin/dist/**/*.entity.js'
-  ],
+  entities: ['dist/src/domain/**/*.entity.js'],
   migrations: ['./src/config/database/migrations/*.{ts,js}'],
   migrationsTableName: 'migrations'
 };
