@@ -4,12 +4,12 @@ import { DataSource } from 'typeorm';
 import { BusinessModule } from './business/business.module';
 import { AppController } from './commons/app/controllers/app.controller';
 import { AppService } from './commons/app/services/app.service';
-import { ConfigPruebasNestModule } from './config/config.module';
+import { ConfigProjModule } from './config/config.module';
 import { DomainModule } from './domain/domain.module';
-
+import { DefaultAdminModule } from 'nestjs-admin'
 
 @Module({
-  imports: [ConfigPruebasNestModule, BusinessModule, DomainModule],
+  imports: [ConfigProjModule, BusinessModule, DomainModule, DefaultAdminModule],
   controllers: [AppController],
   providers: [
     {
@@ -20,5 +20,5 @@ import { DomainModule } from './domain/domain.module';
   ]
 })
 export class AppModule {
-  constructor(private dataSource: DataSource) {}
+  constructor(private dataSource: DataSource, ) {}
 }

@@ -11,4 +11,4 @@ const configParam = {
 @Module({
   imports: [ConfigModule.forRoot(configParam), DatabaseModule]
 })
-export class ConfigPruebasNestModule {}
+export class ConfigProjModule {}
