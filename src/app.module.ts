@@ -6,10 +6,9 @@ import { AppController } from './commons/app/controllers/app.controller';
 import { AppService } from './commons/app/services/app.service';
 import { ConfigProjModule } from './config/config.module';
 import { DomainModule } from './domain/domain.module';
-import { DefaultAdminModule } from 'nestjs-admin'
 
 @Module({
-  imports: [ConfigProjModule, BusinessModule, DomainModule, DefaultAdminModule],
+  imports: [ConfigProjModule, BusinessModule, DomainModule],
   controllers: [AppController],
   providers: [
     {

@@ -1,0 +1,13 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "database": "pruebas",
+  "username": "postgres",
+  "password": "postgres",
+  "logging":true,
+  "entities": [
+  "./dist/src/domain/**/*.entity.js"
+],
+  "migrationsTableName": "migrations"
+}
