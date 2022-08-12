@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { DatabaseModule } from './database/database.module';
 
 const configParam = {
   // TODO: ver de agregar otros ambientes
@@ -9,6 +8,6 @@ const configParam = {
 };
 
 @Module({
-  imports: [ConfigModule.forRoot(configParam), DatabaseModule]
+  imports: [ConfigModule.forRoot(configParam)],
 })
 export class ConfigProjModule {}

@@ -52,11 +52,17 @@ export const typeOrmAsyncConfig: TypeOrmModuleAsyncOptions = {
   }
 };
 
+/***
+ *  This connection is used to run migrations!!!
+ */
 export const typeOrmConfig: DataSourceOptions = {
   type: 'postgres',
   host: process.env.TYPEORM_HOST || 'localhost',
   port: parseInt(process.env.TYPEORM_PORT) || 5432,
-  database: process.env.TYPEORM_DATABASE || 'pruebas',
+  database:
+    !process.env.NODE_ENV || process.env.NODE_ENV === 'test'
+      ? 'pruebas_test'
+      : 'pruebas',
   username: process.env.TYPEORM_USERNAME || 'postgres',
   password: process.env.TYPEORM_PASSWORD || 'postgres',
   logging: Boolean(process.env.TYPEORM_LOGGING) || true,
