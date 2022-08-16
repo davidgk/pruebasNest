@@ -38,6 +38,7 @@
     "@nestjs/typeorm": "^9.0.0",
     "@types/faker": "^6.6.9",
     "adminjs": "^6.1.1",
+    "bcrypt": "^5.0.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "express": "^4.18.1",
@@ -49,6 +50,7 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
+    "tiptap": "^1.32.2",
     "tslib": "^2.3.1",
     "typeorm": "^0.3.7",
     "webpack": "^5.0.0"
