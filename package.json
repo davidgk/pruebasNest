@@ -14,7 +14,7 @@
     "start:debug": "nest start --debug --watch",
     "typeorm:cli": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js -d ./src/config/database/typeorm.config-migrations.ts",
     "migration:generate": "npm run typeorm:cli migration:generate",
-    "migration:create": "npm run typeorm:cli migration:create",
+    "migration:create": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:create",
     "migration:run:test": "NODE_ENV=test npm run typeorm:cli migration:run",
     "migration:run:dev": "NODE_ENV=dev npm run typeorm:cli migration:run",
     "migration:revert": "npm run typeorm:cli migration:revert",

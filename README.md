@@ -1,5 +1,6 @@
 #Pruebas en Nest
 
+The app contains a default admin user
 
 ## Run it locally 
 
@@ -15,9 +16,18 @@
          source ./prj_aliases/prueba_base_aliases
          debug
          ````
+7.- Run migrations:
+```
+   npm run migrations:run:dev
+```
+8.- Default admin user is adm@adm.com and pass is adm, create your user and change this user admin permissions to not allow to log in with it and use yours
+
+
 ## About migrations:
 
 don't forget to install typeorm-cli:
+
+
 
 ```
 npm i typeorm-cli

@@ -1,5 +1,11 @@
-import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BeforeInsert,
+  Column,
+  Entity,
+  PrimaryGeneratedColumn
+} from 'typeorm';
 import { Base } from '../../base.entity';
+import * as bcrypt from 'bcrypt';
 
 @Entity('users')
 export class User extends Base {
@@ -18,9 +24,17 @@ export class User extends Base {
   @Column({ nullable: true })
   lastName?: string;
 
-  @Column({ select: false })
+  @Column({ nullable: false })
   password!: string;
 
   @Column({ default: false })
   isAdmin: boolean;
+
+  @BeforeInsert()
+  async hashPassword() {
+    this.password = await bcrypt.hash(
+      this.password,
+      Number(process.env.HASH_SALT)
+    );
+  }
 }
